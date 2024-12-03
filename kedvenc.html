@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hargitai Marcell">
+    <meta name="copyright" content="Az oldal kizárólag oktatási célokat szolgál">
+    <meta name="description" content="A sörrel, sörtípusokkal, preferenciákkal foglalkozó blogoldal.">
+    <link rel="stylesheet" href="css/sor.css">
+    <link rel="icon" type="image/x-icon" href="sorok/beer-27.png">
+    <!-- Validalas -->
+    <script src="jquery-3.7.1/jquery-3.7.1.min.js"></script>
+    <script src="jquery-validation-1.19.5/dist/jquery.validate.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#hirlevel").validate({
+                //ide jön a rules és a messages rész
+                rules: {
+                    csaladnev: "required",
+                    keresztnev: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                },
+                messages: {
+                    keresztnev: " Írd be a keresztneved!",
+                    csaladnev: " Írd be a vezetékneved!",
+                    email: " Kérlek valós email címet adj meg!",
+                },
+
+            });
+        });
+    </script>
+
+    <!--Ikonok: https://www.w3schools.com/howto/howto_css_social_media_buttons.asp -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!---->
+    <title>Sör és Én</title>
+</head>
+
+<body>
+    <button id="fel"><img src="sorok/fel.png" alt="fel gomb" class="gomb"></button>
+    <header>
+        <a href="index.html" class="cim"><h1>Sör és Én</h1></a>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Kezdőlap</a></li>
+            <li><a href="plusz.html">A Sör</a></li>
+            <li><a href="#" id="active">Kedvenceim</a></li>
+            <li><a href="shop.html">Shop</a></li>
+
+        </ul>
+    </nav>
+
+
+    <!--Medvedgrad-->
+    <div class="fejlecek">
+        <img src="sorok/pivovara-3.jpg" alt="Pivovara medvedgrad">
+        <div class="kozep">
+            <p class="fejlecek">Pivovara Medvedgrad</p>
+        </div>
+    </div>
+
+    <div class="linkek">
+        <p class="linkek">
+            <a target="_blank" href="https://www.facebook.com/pivovaramedvedgrad" class="fa  fa-facebook"></a>
+            <a target="_blank" href="https://www.instagram.com/pivovaramedvedgrad" class="fa fa-instagram"></a>
+            <a target="_blank" href="https://pivovara-medvedgrad.hr" class="fa fa-google"></a>
+        </p>
+    </div>
+
+    <div class="sokuveg">
+        <div class="sorok">
+            <aside class="uvegek"><img src="sorok/Zlatni-medvjed-05L.png" alt="Zlatni medvjed" class="uveg"> </aside>
+            <article class="sorleiras">
+                <p class="cormorant-unicase-bold ">Zlatni medvjed <br>(The Golden Bear)</p>
+                <p class="cormorant-unicase-semibold">Pilsner <br> ALC 4,4% / IBU 25</p>
+
+                <p>Egy természetes kézműves lager a legjobb pilseni malátából, Aurora, Golding és Saaz komlóval.</p>
+            </article>
+        </div>
+
+        <div class="sorok">
+            <aside class="uvegek">
+                <img src="sorok/Hladno-pivo-05.png" alt="Hladno pivo" class="uveg">
+            </aside>
+            <article class="sorleiras">
+                <p class="cormorant-unicase-bold ">Hladno Pivo <br>(Cold Beer)</p>
+                <p class="cormorant-unicase-semibold">Punk Rock Lager <br> ALC 4,1% / IBU 35</p>
+
+                <p>Ez a sör, amely inkább a komlósabb oldalon van, egy horvát punk rock zenekar, a Hladno pivo („Hideg
+                    sör”) együttműködésével készült.</p>
+            </article>
+
+        </div>
+
+        <div class="sorok">
+            <aside class="uvegek">
+                <img src="sorok/Crna-kraljica-05.png" alt="Crna kraljica" class="uveg">
+            </aside>
+            <article class="sorleiras">
+                <p class="cormorant-unicase-bold ">Crna kraljica <br> (The Black Queen)</p>
+                <p class="cormorant-unicase-semibold">Schwarzbier <br> ALC 4,8% / IBU 20</p>
+                <p>Egy sötét lager, amelyet a pörkölt maláta és árpa intenzív íze és aromája jellemez, mégis
+                    kiegyensúlyozott és könnyen fogyasztható.</p>
+            </article>
+        </div>
+    </div>
+
+    <!--Brew Age üvegek-->
+    <div class="fejlecek">
+        <img src="sorok/brew_age.jpg" alt="Brew Age">
+        <div class="kozep">
+            <p class="fejlecek">Brew Age</p>
+        </div>
+    </div>
+    <div class="linkek">
+        <p class="linkek">
+            <a target="_blank" href="https://www.facebook.com/BrewAge" class="fa  fa-facebook"></a>
+            <a target="_blank" href="https://www.instagram.com/brewage/" class="fa fa-instagram"></a>
+            <a target="_blank" href="https://brewage.at/" class="fa fa-google"></a>
+        </p>
+    </div>
+    <div class="sokuveg">
+        <div class="sorok">
+            <aside class="uvegek"><img src="sorok/alpha_tier.png" alt="Alpha Tier" class="uveg"> </aside>
+            <article class="sorleiras">
+                <p class="cormorant-unicase-bold ">Alpha Tier</p>
+                <p class="cormorant-unicase-semibold">New England IPA <br> ALC 5,6% / IBU 40</p>
+
+                <p>Egy szőke, bársonyos sör finom természetes zavarossággal, gyümölcsös illattal áraszt, mely selymes
+                    szájérzetet biztosít.</p>
+            </article>
+        </div>
+
+        <div class="sorok">
+            <aside class="uvegek">
+                <img src="sorok/hopfenauflauf.png" alt="Hopfenauflauf" class="uveg">
+            </aside>
+            <article class="sorleiras">
+                <p class="cormorant-unicase-bold ">Hopfenauflauf</p>
+                <p class="cormorant-unicase-semibold">Pale Ale <br> ALC 5,4% / IBU 35</p>
+
+                <p>Ez a Pale Ale gyümölcsös-aromás komlófajtákkal mangó és maracuja illatát kínálja. Ízében az egzotikus
+                    gyümölcsök és a komlókeserűség harmonikus összjátéka bontakozik ki.</p>
+            </article>
+
+        </div>
+
+        <div class="sorok">
+            <aside class="uvegek">
+                <img src="sorok/helles.png" alt="Helles" class="uveg">
+            </aside>
+            <article class="sorleiras">
+                <p class="cormorant-unicase-bold ">Helles</p>
+                <p class="cormorant-unicase-semibold">Helles <br> ALC 4,8% / IBU 20</p>
+                <p>Egyszerű, őszinte, könnyen fogyasztható világos sör. A lágy malátás test és a kíméletes aromakomló
+                    tökéletes egyensúlya.</p>
+            </article>
+        </div>
+    </div>
+
+    <!--Estrella-->
+    <div class="fejlecek">
+        <img src="sorok/estrella2.png" alt="Estrella Damm">
+        <div class="kozep">
+            <p class="fejlecek">Estrella Damm</p>
+        </div>
+    </div>
+    <div class="linkek">
+        <p class="linkek">
+            <a target="_blank" href="https://www.facebook.com/EstrellaDamm/" class="fa  fa-facebook"></a>
+            <a target="_blank" href="https://www.instagram.com/estrelladamm/" class="fa fa-instagram"></a>
+            <a target="_blank" href="https://www.estrelladamm.com/" class="fa fa-google"></a>
+        </p>
+    </div>
+    <div class="sokuveg">
+        <div class="sorok">
+            <aside class="uvegek"><img src="sorok/voll-damm1000.png" alt="Voll Damm" class="uveg oribird"> </aside>
+            <article class="sorleiras">
+                <p class="cormorant-unicase-bold ">Voll Damm</p>
+                <p class="cormorant-unicase-semibold"> Märzen <br> ALC 7,2% / IBU 34</p>
+
+                <p>Egy tölgyfa színű sör narancsos árnyalatokkal. Sűrű és ragyogó, pörkölt tónusú színréteggel.</p>
+            </article>
+        </div>
+
+        <div class="sorok">
+            <aside class="uvegek">
+                <img src="sorok/complot1000.png" alt="Complot IPA" class="uveg oribird">
+            </aside>
+            <article class="sorleiras">
+                <p class="cormorant-unicase-bold ">Complot IPA</p>
+                <p class="cormorant-unicase-semibold">India Pale Ale <br> ALC 6,6% / IBU 45</p>
+
+                <p>Egy limitált kiadású sör, amelynek gyártása a komlóbetakarításhoz kapcsolódik. Intenzív sör, trópusi
+                    és citrusos gyümölcsök jegyeivel.</p>
+            </article>
+
+        </div>
+
+        <div class="sorok">
+            <aside class="uvegek">
+                <img src="sorok/malquerida1000.png" alt="Malquerida" class="uveg oribird">
+            </aside>
+            <article class="sorleiras">
+                <p class="cormorant-unicase-bold ">Malquerida</p>
+                <p class="cormorant-unicase-semibold"> Fresh Red <br> ALC 5% / IBU 19</p>
+                <p>Egy teljesen új sörstílus. Ideális társ fűszeres, erőteljes és pikáns latin ételekhez.</p>
+            </article>
+        </div>
+
+    </div>
+    <!--Helka-->
+    <div class="fejlecek">
+        <img src="sorok/helka.jpg" alt="Őribird Sörfőzde">
+        <div class="kozep">
+            <p class="fejlecek"> Helka Sörfőzde</p>
+        </div>
+    </div>
+    <div class="linkek">
+        <p class="linkek">
+            <a target="_blank" href="https://www.facebook.com/helkasorfozde" class="fa  fa-facebook"></a>
+            <a target="_blank" href="https://www.instagram.com/helkabrewery/" class="fa fa-instagram"></a>
+            <a target="_blank" href="https://helkasor.hu/" class="fa fa-google"></a>
+        </p>
+    </div>
+    <div class="sokuveg">
+        <div class="sorok">
+            <aside class="uvegek">
+                <img src="sorok/horka.png" alt="Horka" class="uveg">
+            </aside>
+            <article class="sorleiras">
+                <p class="cormorant-unicase-bold ">Horka</p>
+                <p class="cormorant-unicase-semibold">Fekete kölsch <br> ALC 5,1% </p>
+                <p>Egy merően új stílus, melyben találkozik a kölsch stílusra jellemző frissítő malátás könnyedség és a
+                    sötét sörökre jellemző pörkölt maláta intenzív karaktere.</p>
+            </article>
+        </div>
+
+        <div class="sorok">
+            <aside class="uvegek">
+                <img src="sorok/kelen.png" alt="Kelén" class="uveg">
+            </aside>
+            <article class="sorleiras">
+                <p class="cormorant-unicase-bold ">Kelén</p>
+                <p class="cormorant-unicase-semibold">India Pale Ale <br> ALC 5,8% </p>
+
+                <p>A hidegen komlózás sokkal izgalmasabb ízeket, frissítő citrusos és trópusi ízjegyeket varázsol a
+                    korsóba.</p>
+            </article>
+
+        </div>
+
+        <div class="sorok">
+            <aside class="uvegek">
+                <img src="sorok/kleine-fische.png" alt="Kleine Fische" class="uveg">
+            </aside>
+            <article class="sorleiras">
+                <p class="cormorant-unicase-bold ">Kleine Fische</p>
+                <p class="cormorant-unicase-semibold">Bajor búzasör <br>ALC 5,5%</p>
+                <p>A Kleine Fische egy bajor búzasör, banános és szegfűszeges aromákkal. Világos, ködös külseje a
+                    búzamalátának köszönhető.</p>
+            </article>
+        </div>
+    </div>
+    <!--Őribird-->
+    <div class="fejlecek">
+        <img src="sorok/oribird-b.jpg" alt="Őribird Sörfőzde">
+        <div class="kozep">
+            <p class="fejlecek"> Őribird Sörfőzde</p>
+        </div>
+    </div>
+    <div class="linkek">
+        <p class="linkek">
+            <a target="_blank" href="https://www.facebook.com/oribirdsor" class="fa  fa-facebook"></a>
+            <a target="_blank" href="https://www.instagram.com/oribirdsor/" class="fa fa-instagram"></a>
+            <a target="_blank" href="https://oribird.hu/" class="fa fa-google"></a>
+        </p>
+    </div>
+    <div class="sokuveg">
+        <div class="sorok">
+            <aside class="uvegek oribird">
+                <img src="sorok/kiralyka.jpg" alt="Királyka" class="uveg oribird">
+            </aside>
+            <article class="sorleiras">
+                <p class="cormorant-unicase-bold ">Királyka</p>
+                <p class="cormorant-unicase-semibold">German Pils <br> ALC 5,0% / B 11°</p>
+                <p>Világos, arany színű, a finom és enyhe komlózású, valamint a tiszta ízvilágú klasszikus lager sör.
+                </p>
+            </article>
+        </div>
+
+        <div class="sorok">
+            <aside class="uvegek oribird">
+                <img src="sorok/partifecske.jpg" alt="Partifecske" class="uveg oribird">
+            </aside>
+            <article class="sorleiras">
+                <p class="cormorant-unicase-bold ">Partifecske</p>
+                <p class="cormorant-unicase-semibold">West Coast IPA <br> ALC 6,2% / B 14,4°</p>
+
+                <p>Egyedülállóan gazdag ízvilág, amelyet öt féle komló egyedülálló keveréke biztosít.</p>
+            </article>
+
+        </div>
+
+        <div class="sorok">
+            <aside class="uvegek oribird">
+                <img src="sorok/jegmadar.jpg" alt="Jégmadár" class="uveg oribird">
+            </aside>
+            <article class="sorleiras">
+                <p class="cormorant-unicase-bold ">Jégmadár</p>
+                <p class="cormorant-unicase-semibold">Witbier <br>ALC 4,7% / B 12°</p>
+                <p>Friss, gyümölcsös aromájú belga stílusú búzasör, amelyet összetevői, friss citrusok és
+                    koriander tesznek különlegessé.</p>
+            </article>
+        </div>
+    </div>
+
+    <footer>
+
+        <form id="hirlevel" method="post" action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php" novalidate>
+            <h2>Szeretnél különleges sörajánlásokat kapni? Iratkozz fel a hírlevelemre!</h2>
+            <div class="hirlevel">
+                <div class="kerdes">
+                    <label for="csalad">Családnév</label>
+                    <input id="csalad" type="text" name="csaladnev" placeholder="Családnév">
+                </div>
+
+                <div class="kerdes">
+                    <label for="kereszt">Keresztnév</label>
+                    <input id="kereszt" type="text" name="keresztnev" placeholder="Keresztnév">
+                </div>
+
+                <div class="kerdes">
+                    <label for="email">E-mail</label>
+                    <input id="email" type="email" name="email" placeholder="E-mail">
+                </div>
+            </div>
+            <div class="hirlevel">
+                <p>
+                    <input type="submit" value="Feliratkozás">
+                </p>
+            </div>
+            <div class="f">
+                <p>Az oldal kizárólag oktatási célokat szolgál</p>
+                <p>© Hargitai Marcell 2024.</p>
+            </div>
+        </form>
+
+    </footer>
+
+    <script src="js/sor.js"></script>
+</body>
+
+</html>

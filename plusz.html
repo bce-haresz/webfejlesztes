@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hargitai Marcell">
+    <meta name="copyright" content="Az oldal kizárólag oktatási célokat szolgál">
+    <meta name="description" content="A sörrel, sörtípusokkal, preferenciákkal foglalkozó blogoldal.">
+    <link rel="stylesheet" href="css/sor.css">
+    <link rel="icon" type="image/x-icon" href="sorok/beer-27.png">
+    <!-- Validalas -->
+    <script src="jquery-3.7.1/jquery-3.7.1.min.js"></script>
+    <script src="jquery-validation-1.19.5/dist/jquery.validate.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#hirlevel").validate({
+                //ide jön a rules és a messages rész
+                rules: {
+                    csaladnev: "required",
+                    keresztnev: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                },
+                messages: {
+                    keresztnev: " Írd be a keresztneved!",
+                    csaladnev: " Írd be a vezetékneved!",
+                    email: " Kérlek valós email címet adj meg!",
+                },
+
+            });
+        });
+    </script>
+
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!---->
+    <title>Sör és Én</title>
+</head>
+
+<body>
+    <button id="fel"><img src="sorok/fel.png" alt="fel gomb" class="gomb"></button>
+    <header>
+        <a href="index.html" class="cim">
+            <h1>Sör és Én</h1>
+        </a>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Kezdőlap</a></li>
+            <li><a href="#" id="active">A Sör</a></li>
+            <li><a href="kedvenc.html">Kedvenceim</a></li>
+            <li><a href="shop.html">Shop</a></li>
+
+        </ul>
+    </nav>
+
+
+    <!--Sörtípusok-->
+    <div class="fejlecek">
+        <img src="sorok/sorjeg.jpg" alt="Sörök jégen">
+        <div class="kozep">
+            <p class="fejlecek">Sörtípusok</p>
+        </div>
+    </div>
+    <article class="szoveg">
+        <div>
+            <p>A következő pontban a sörök világának két alapvető típusa kerül bemutatásra, amelyek meghatározóak a
+                sörkészítésben és az ízvilág szempontjából. Ezek az eltérő kategóriák nemcsak a gyártási folyamatokban,
+                hanem a fogyasztói élményben is jelentős különbségeket hordoznak magukban.
+            </p>
+            <p>Az ale és a lager típusú sörök bemutatása során megismerhetjük azokat az egyedi jellemzőket, amelyek
+                megkülönböztetik őket egymástól, valamint azt, hogyan határozzák meg ezek a kategóriák a különböző
+                sörstílusokat. A következő pont lehetőséget nyújt arra, hogy jobban megértsük, mitől válik egy sör
+                igazán különlegessé az elkészítési módja alapján.</p>
+            <p>Ez az összehasonlítás betekintést ad a sörök sokszínűségébe, miközben közelebb hozza a sörfogyasztókat a
+                tudatos választáshoz, legyen szó egy könnyed italról vagy egy karakteresebb különlegességről.</p>
+        </div>
+    </article>
+    <!--ALE-->
+    <div class="oszlop">
+        <div class="tipus">
+            <div class="fejlecek">
+                <img src="sorok/ale.jpg" alt="Ale sörtípus">
+                <div class="kozep">
+                    <p class="fejlecek">Ale</p>
+                </div>
+            </div>
+            <div class="szempont">
+                <h2>Ízvilág</h2>
+                <p>Általában gyümölcsösebb, összetettebb ízprofil. Gyakran malátás, karamellás, fűszeres,
+                    komlós vagy éppen citrusos jegyekkel rendelkeznek.</p>
+            </div>
+            <div class="szempont">
+                <h2>Szín</h2>
+                <p>A színek a világostól (pl. Pale Ale) a mély borostyánon át a sötét, majdnem fekete
+                    árnyalatokig
+                    (pl. Stout, Porter) terjedhetnek.</p>
+            </div>
+            <div class="szempont">
+                <h2>Szénsavasság</h2>
+                <p>Általában alacsonyabb vagy közepes szénsavasság jellemzi őket, ami kellemes, lágy érzetet ad az
+                    italnak.</p>
+            </div>
+            <div class="szempont">
+                <h2>Alkoholtartalom</h2>
+                <p>Általában 4-8%, de bizonyos erősebb változatok, mint a Barleywine, akár 12% fölött is
+                    lehetnek.</p>
+            </div>
+            <div class="szempont lista">
+                <h2>Főbb ale típusok</h2>
+                <ul>
+                    <li>Pale Ale</li>
+                    <li>India Pale Ale</li>
+                    <li>Stout</li>
+                    <li>Porter</li>
+                    <li>Barleywine</li>
+                    <li>Brown Ale</li>
+                    <li>Belgian Ale</li>
+                    <li>Wheat Ale</li>
+                </ul>
+            </div>
+        </div>
+        <!--LAGER-->
+        <div class="tipus">
+            <div class="fejlecek">
+                <img src="sorok/lager.jpg" alt="Lager sörtípus">
+                <div class="kozep">
+                    <p class="fejlecek">Lager</p>
+                </div>
+            </div>
+            <div class="szempont">
+                <h2>Ízvilág</h2>
+                <p>Általában tiszta, friss, kiegyensúlyozott íz jellemzi őket. Az ízben a malátás édesség
+                    dominál, amit finoman ellensúlyoz a komló kesernyéssége.</p>
+            </div>
+            <div class="szempont">
+                <h2>Szín</h2>
+                <p>Az aranysárgától a mélybarnáig terjed, attól függően, hogy milyen típusú lager sör készül (pl.
+                    világos lager, pilsner, dunkel, bock).</p>
+            </div>
+            <div class="szempont">
+                <h2>Szénsavasság</h2>
+                <p>Általában közepesen szénsavasak, ami hozzájárul a frissítő érzethez. Könnyen fogyazsthatóvá teszi az
+                    italt.</p>
+            </div>
+            <div class="szempont">
+                <h2>Alkoholtartalom</h2>
+                <p>Általában 4-6% között mozog, bár erősebb változatok is léteznek, például a Doppelbock
+                    (7-12%).</p>
+            </div>
+            <div class="szempont lista">
+                <h2>Főbb Lager típusok</h2>
+                <ul>
+                    <li>Pilsner</li>
+                    <li>Helles</li>
+                    <li>Dunkel</li>
+                    <li>Bock</li>
+                    <li>Märzen</li>
+                    <li>American Lager</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+
+        <form id="hirlevel" method="post" action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php" novalidate>
+            <h2>Szeretnél különleges sörajánlásokat kapni? Iratkozz fel a hírlevelemre!</h2>
+            <div class="hirlevel">
+                <div class="kerdes">
+                    <label for="csalad">Családnév</label>
+                    <input id="csalad" type="text" name="csaladnev" placeholder="Családnév">
+                </div>
+
+                <div class="kerdes">
+                    <label for="kereszt">Keresztnév</label>
+                    <input id="kereszt" type="text" name="keresztnev" placeholder="Keresztnév">
+                </div>
+
+                <div class="kerdes">
+                    <label for="email">E-mail</label>
+                    <input id="email" type="email" name="email" placeholder="E-mail">
+                </div>
+            </div>
+            <div class="hirlevel">
+                <p>
+                    <input type="submit" value="Feliratkozás">
+                </p>
+            </div>
+            <div class="f">
+                <p>Az oldal kizárólag oktatási célokat szolgál</p>
+                <p>© Hargitai Marcell 2024.</p>
+            </div>
+        </form>
+
+    </footer>
+    <script src="js/sor.js"></script>
+</body>
+
+</html>

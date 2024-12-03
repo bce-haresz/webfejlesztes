@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hargitai Marcell">
+    <meta name="copyright" content="Az oldal kizárólag oktatási célokat szolgál">
+    <meta name="description" content="A sörrel, sörtípusokkal, preferenciákkal foglalkozó blogoldal.">
+    <link rel="stylesheet" href="css/sor.css">
+    <link rel="icon" type="image/x-icon" href="sorok/beer-27.png">
+    <!-- Validalas -->
+    <script src="jquery-3.7.1/jquery-3.7.1.min.js"></script>
+    <script src="jquery-validation-1.19.5/dist/jquery.validate.js"></script>
+    <!--HÍRLEVÉL VAIDLÁLÁS -->
+    <script>
+        $(document).ready(function () {
+            $("#hirlevel").validate({
+                rules: {
+                    csaladnev: "required",
+                    keresztnev: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                },
+                messages: {
+                    keresztnev: " Írd be a keresztneved!",
+                    csaladnev: " Írd be a vezetékneved!",
+                    email: " Kérlek valós email címet adj meg!",
+                },
+
+            });
+        });
+    </script>
+    <!-- WEBSHOP VALIDÁLÁS -->
+    <script>
+        $(document).ready(function () {
+            $("#rendeles").validate({
+                rules: {
+                    vezetéknév: "required",
+                    keresztnév: "required",
+                    emailcím: {
+                        required: true,
+                        email: true
+                    },
+                    telefonszám: {
+                        required: true,
+                        minlength: 11,
+                        maxlength: 11,
+                    },
+                    születésidátum: {
+                        required: true,
+                    },
+                    elfogadom: "required",
+                    kerület: "required",
+                    irányítószám: {
+                        required: true,
+                        minlength: 4,
+                        maxlength: 4,
+                    },
+                    utca: "required",
+                    házszám: "required",
+                },
+                messages: {
+                    keresztnév: " Írd be a keresztneved!",
+                    vezetéknév: " Írd be a vezetékneved!",
+                    emailcím: " Kérlek valós email címet adj meg!",
+                    telefonszám: {
+                        required: "Formátum: 06123456789",
+                        minlength: "Túl rövid! Formátum: 06123456789",
+                        maxlength: "Túl hosszú! Formátum: 06123456789",
+                    },
+                    születésidátum: " Add meg a születési dátumod!",
+                    elfogadom: "A megrendeléshez el kell fogadnod az adatvédelmi tájékoztatót!",
+                    kerület: "Add meg a kerületet!",
+                    irányítószám: {
+                        required: "Add meg az irányítószámod!",
+                        minlength: "Az írányítószám 4 karakterből állhat!",
+                        maxlength: "Az írányítószám 4 karakterből állhat!",
+                    },
+                    utca: "Add meg az utcát!",
+                    házszám: "Add meg a házszámot!",
+                },
+
+            });
+        });
+    </script>
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!---->
+    <title>Sör és Én</title>
+</head>
+
+<body>
+    <button id="fel"><img src="sorok/fel.png" alt="fel gomb" class="gomb"></button>
+    <header>
+        <a href="index.html" class="cim">
+            <h1>Sör és Én</h1>
+        </a>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Kezdőlap</a></li>
+            <li><a href="plusz.html">A Sör</a></li>
+            <li><a href="kedvenc.html">Kedvenceim</a></li>
+            <li><a href="#" id="active">Shop</a></li>
+
+        </ul>
+    </nav>
+    <!--KOSÁR-->
+    <div class="figy">
+        <h3>Termékeinket csak Budapest területén szállítjuk ki! Rendeléseket csak 18 év feletti felhasználók adhatnak
+            le!</h3>
+        <p>*:kötelező mező</p>
+    </div>
+    <form id="rendeles" method="post" action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php">
+        <fieldset class="adat">
+            <legend>
+                <h3>Személyes adatok:</h3>
+            </legend>
+            <div>
+                <label for="vnev">Vezetéknév:* </label>
+                <input id="vnev" type="text" name="vezetéknév">
+            </div>
+            <div>
+                <label for="knev">Keresztnév:*</label>
+                <input id="knev" type="text" name="keresztnév">
+            </div>
+            <div>
+                <label for="e-mail">E-mail cím:* </label>
+                <input id="e-mail" type="email" name="emailcím">
+            </div>
+            <div>
+                <label for="tel">Telefonszám:*</label>
+                <input id="tel" type="tel" name="telefonszám">
+            </div>
+            <div>
+                <label for="dat">Születési dátum:*</label>
+                <input id="dat" type="date" name="születésidátum">
+            </div>
+            <div>
+                <label for="elfogad">Elfogadom az adatvédelmi tájékoztatót:* <input id="elfogad" type="checkbox"
+                        name="elfogadom" value="1"></label>
+            </div>
+        </fieldset>
+
+        <fieldset class="adat">
+            <legend>
+                <h3>Szállítási adatok:</h3>
+            </legend>
+            <div>
+                <label for="v">Város:*</label>
+                <input id="v" type="text" readonly name="város" value="Budapest">
+            </div>
+            <div>
+                <label for="ker">Kerület:*</label>
+                <select name="kerület" id="ker">
+                    <option value="">Válassz...</option>
+                    <option value="1">I. Kerület</option>
+                    <option value="2">II. Kerület</option>
+                    <option value="3">III. Kerület</option>
+                    <option value="4">IV. Kerület</option>
+                    <option value="5">V. Kerület</option>
+                    <option value="6">VI. Kerület</option>
+                    <option value="7">VII. Kerület</option>
+                    <option value="8">VIII. Kerület</option>
+                    <option value="9">IX. Kerület</option>
+                    <option value="10">X. Kerület</option>
+                    <option value="11">XI. Kerület</option>
+                    <option value="12">XII. Kerület</option>
+                    <option value="13">XIII. Kerület</option>
+                    <option value="14">XIV. Kerület</option>
+                    <option value="15">XV. Kerület</option>
+                    <option value="16">XVI. Kerület</option>
+                    <option value="17">XVII. Kerület</option>
+                    <option value="18">XVIII. Kerület</option>
+                    <option value="19">XIX. Kerület</option>
+                    <option value="20">XX. Kerület</option>
+                    <option value="21">XXI. Kerület</option>
+                    <option value="22">XXII. Kerület</option>
+                    <option value="23">XXIII. Kerület</option>
+
+                </select>
+            </div>
+            <div>
+                <label for="ir">Irányítószám:*</label>
+                <input id="ir" type="number" name="irányítószám">
+            </div>
+            <div>
+                <label for="ut">Utca:*</label>
+                <input id="ut" type="text" name="utca">
+            </div>
+            <div>
+                <label for="hsz">Házszám:*</label>
+                <input id="hsz" type="text" name="házszám">
+            </div>
+            <div>
+                <label for="ido">Szállítás preferált időpontja:</label>
+                <input id="ido" type="time" name="szállítás ideje">
+            </div>
+            <div>
+                <label for="megj">Megjegyzés:</label>
+                <textarea id="megj" name="megjegyzés" rows="3"></textarea>
+            </div>
+        </fieldset>
+
+        <fieldset class="kosar">
+            <legend>
+                <h3>Kosár:</h3>
+            </legend>
+            <div>
+                <table>
+                    <tr>
+                        <td id="db_a">Pivovara medvedgrad csomag:</td>
+                        <td id="osszeg_a"></td>
+                    </tr>
+                </table>
+                <hr>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <td id="db_b">Brew Age csomag:</td>
+                        <td id="osszeg_b"></td>
+                    </tr>
+                </table>
+                <hr>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <td id="db_c">Estrella Damm csaomag: </td>
+                        <td id="osszeg_c"></td>
+                    </tr>
+                </table>
+                <hr>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <td id="db_d">Helka csomag: </td>
+                        <td id="osszeg_d"></td>
+                    </tr>
+                </table>
+                <hr>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <td id="db_e">Őribird csomag: </td>
+                        <td id="osszeg_e"></td>
+                    </tr>
+                </table>
+                <hr>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <td class="veg">Végösszeg:</td>
+                        <td class="veg" id="osszeg"></td>
+                    </tr>
+                </table>
+            </div>
+        </fieldset>
+
+        <input class="rejt" id="a" type="number" readonly name="a">
+        <input class="rejt" id="b" type="number" readonly name="b">
+        <input class="rejt" id="c" type="number" readonly name="c">
+        <input class="rejt" id="d" type="number" readonly name="d">
+        <input class="rejt" id="e" type="number" readonly name="e">
+
+        <div class="kosarfrissit">
+            <input id="rendeles" type="submit" value="Megrendelem">
+        </div>
+    </form>
+
+
+
+
+
+    <!--TERMÉKEK-->
+    <div class="ajanlatok">
+
+        <div class="sorcsomag">
+            <aside class="uvegek oribird">
+                <img src="sorok/6-pack.jpg" alt="Pivovara Medvedgrad csomag" class="uveg oribird">
+            </aside>
+            <article class="sorleiras">
+                <p class="cormorant-unicase-bold ">Pivovara Medvedgrad csomag</p>
+                <p>6 db válogatott sör a Pivovara Medvedgrad sörfőzdéből!</p>
+
+                <input type="button" id="minusz_a" value="-">
+                <input type="number" id="csomag_a" name="a" max="99" min="0">
+                <input type="button" id="plusz_a" value="+"> <br>4590 Ft<br>
+
+                <input type="button" name="kosárba" id="kosarba_a" value="Kosárba">
+
+            </article>
+        </div>
+        <div class="sorcsomag">
+            <aside class="uvegek oribird">
+                <img src="sorok/6-pack.jpg" alt="Brew Age csomag" class="uveg oribird">
+            </aside>
+            <article class="sorleiras">
+                <p class="cormorant-unicase-bold ">Brew Age csomag</p>
+                <p>6 db válogatott sör a Brew Age sörfőzdéből!</p>
+
+                <input type="button" id="minusz_b" value="-">
+                <input type="number" id="csomag_b" name="b" max="99" min="0">
+                <input type="button" id="plusz_b" value="+"> <br>4990 Ft<br>
+                <input type="button" name="kosárba" id="kosarba_b" value="Kosárba">
+
+            </article>
+        </div>
+        <div class="sorcsomag">
+            <aside class="uvegek oribird">
+                <img src="sorok/6-pack.jpg" alt="Estrella Damm csomag" class="uveg oribird">
+            </aside>
+            <article class="sorleiras">
+                <p class="cormorant-unicase-bold ">Estrella Damm csomag</p>
+                <p>6 db válogatott sör az Estrella Damm sörfőzdéből!</p>
+
+                <input type="button" id="minusz_c" value="-">
+                <input type="number" id="csomag_c" name="c" max="99" min="0">
+                <input type="button" id="plusz_c" value="+"> <br>3990 Ft<br>
+                <input type="button" name="kosárba" id="kosarba_c" value="Kosárba">
+
+            </article>
+        </div>
+        <div class="sorcsomag">
+            <aside class="uvegek oribird">
+                <img src="sorok/6-pack.jpg" alt="Helka csomag" class="uveg oribird">
+            </aside>
+            <article class="sorleiras">
+                <p class="cormorant-unicase-bold ">Helka csomag</p>
+                <p>6 db válogatott sör a Helka sörfőzdéből!</p>
+
+                <input type="button" id="minusz_d" value="-">
+                <input type="number" id="csomag_d" name="d" max="99" min="0">
+                <input type="button" id="plusz_d" value="+"> <br>3690 Ft<br>
+                <input type="button" name="kosárba" id="kosarba_d" value="Kosárba">
+
+            </article>
+        </div>
+        <div class="sorcsomag">
+            <aside class="uvegek oribird">
+                <img src="sorok/6-pack.jpg" alt="Őribird csomag" class="uveg oribird">
+            </aside>
+            <article class="sorleiras">
+                <p class="cormorant-unicase-bold ">Őribird csomag</p>
+                <p>6 db válogatott sör az Őribird sörfőzdéből!</p>
+
+                <input type="button" id="minusz_e" value="-">
+                <input type="number" id="csomag_e" name="e" max="99" min="0">
+                <input type="button" id="plusz_e" value="+"><br>3990 Ft<br>
+                <input type="button" name="kosárba" id="kosarba_e" value="Kosárba">
+
+            </article>
+        </div>
+    </div>
+    <div class="kosarfrissit">
+        <input type="button" name="kosár frissít" id="kosarfrissit" value="Kosár frissítése!">
+    </div>
+    <article class="kisszoveg">
+        <p>Az alábbi információk és feltételek biztosítják, hogy vásárlásod zökkenőmentes és jogilag rendezett legyen.
+            Kérjük, figyelmesen olvasd el őket!</p>
+        <h3>Életkorral kapcsolatos szabályozások</h3>
+        <ul>
+
+            <li>Webáruházunkban kizárólag 18 éven felüli személyek vásárolhatnak alkoholos italokat.</li>
+            <li>Vásárláskor igazolnod kell, hogy betöltötted a 18. életévedet. Ennek érdekében fenntartjuk a jogot az
+                életkor ellenőrzésére a kiszállítás során.</li>
+        </ul>
+        <h3>Alkohol felelősségteljes fogyasztása</h3>
+        <ul>
+            <li>A sör fogyasztása felelősségteljesen történjen. Az alkohol káros hatással lehet az egészségedre, ezért
+                fogyaszd mértékkel.</li>
+            <li>Felhívjuk a figyelmet, hogy terhes nők számára az alkoholfogyasztás kifejezetten kerülendő.</li>
+        </ul>
+        <h3>Szállítási és vásárlási feltételek</h3>
+        <ul>
+            <li>A megrendelések feldolgozása és szállítása csak Budapest területén érhető el.</li>
+            <li>A termékek kiszállítása során biztosítjuk, hogy az italok megfelelő minőségben érkezzenek meg. Sérült
+                csomagolás
+                esetén az átvételkor jelezd ezt a futárnak, és vedd fel velünk a kapcsolatot.</li>
+            <li>A vásárlást követően a számla automatikusan elküldésre kerül az általad megadott e-mail címre.</li>
+        </ul>
+        <h3>Visszatérítési szabályok</h3>
+        <ul>
+            <li>Az alkoholos termékek esetén a visszaküldés csak bontatlan és sértetlen csomagolás mellett lehetséges, a
+                vásárlástól számított 14 napon belül.</li>
+            <li>Egyedi, személyre szabott csomagok esetében a visszaküldési jog nem érvényesíthető.</li>
+        </ul>
+        <h3>Adatvédelem</h3>
+        <ul>
+            <li>A vásárlás során megadott személyes adatokat kizárólag a megrendelés teljesítésére használjuk fel, és
+                harmadik fél számára nem adjuk ki.</li>
+        </ul>
+        <h3>Figyelmeztetések</h3>
+        <ul>
+            <li>Kérjük, hogy az alkoholos italokat gyermekek elől gondosan elzárva tárold.</li>
+            <li>Az alkoholfogyasztás ronthatja a gépjárművezetéshez szükséges képességeket. Soha ne ülj volán mögé, ha
+                alkoholt
+                fogyasztottál.</li>
+        </ul>
+    </article>
+
+    <footer>
+
+        <form id="hirlevel" method="post" action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php" novalidate>
+            <h2>Szeretnél különleges sörajánlásokat kapni? Iratkozz fel a hírlevelemre!</h2>
+            <div class="hirlevel">
+                <div class="kerdes">
+                    <label for="csalad">Családnév</label>
+                    <input id="csalad" type="text" name="csaladnev" placeholder="Családnév">
+                </div>
+
+                <div class="kerdes">
+                    <label for="kereszt">Keresztnév</label>
+                    <input id="kereszt" type="text" name="keresztnev" placeholder="Keresztnév">
+                </div>
+
+                <div class="kerdes">
+                    <label for="email">E-mail</label>
+                    <input id="email" type="email" name="email" placeholder="E-mail">
+                </div>
+            </div>
+            <div class="hirlevel">
+                <p>
+                    <input type="submit" value="Feliratkozás">
+                </p>
+            </div>
+            <div class="f">
+                <p>Az oldal kizárólag oktatási célokat szolgál</p>
+                <p>© Hargitai Marcell 2024.</p>
+            </div>
+        </form>
+
+    </footer>
+
+    <script src="js/sor.js"></script>
+
+</body>
+
+</html>
