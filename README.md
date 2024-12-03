@@ -1,7 +1,6 @@
-# webfejlesztes
 Az oldal készítője: Hargitai Marcell
 
-URL:
+URL: https://bce-haresz.github.io/webfejlesztes/
 
 TÉMA: 
 Weboldalamat a sörökröl készítettem. Található egy rövid bemutatkozás rólam és hogy miért ezt csináltam, a két fő sörtípus összhasonlítása, kedvenc sörfőzdéim és söreim, valamint egy webshop.
@@ -30,9 +29,16 @@ https://www.estrelladamm.com/
 https://helkasor.hu/
 https://oribird.hu/
 https://www.google.com/url?sa=i&url=https%3A%2F%2Fcandrliquors.com%2Fproduct%2Fvictory-golden-monkey-6pk-bottle%2F&psig=AOvVaw072mBJYJ_bykaskBSdUBc1&ust=1733258849340000&source=images&cd=vfe&opi=89978449&ved=0CBgQ3YkBahcKEwjAiZrB-omKAxUAAAAAHQAAAAAQBA
+https://gocity.com/en/barcelona/attractions/estrella-damm-brewery
+https://www.tastingtable.com/1284792/beer-on-ice-fine-sometimes-stop-freaking-out/
+https://diningguide.hu/sorkalauz-alapanyagok-dicserete/
 
 Szövegek forrása: 
-A sörök leírása a képeknél megjelölt weboldalakról származnak. 
+https://pivovara-medvedgrad.hr/
+https://brewage.at/
+https://www.estrelladamm.com/
+https://helkasor.hu/
+https://oribird.hu/ 
 
 Közösségi média ikonok a kedvenc.html oldalon:
 https://www.w3schools.com/howto/howto_css_social_media_buttons.asp
